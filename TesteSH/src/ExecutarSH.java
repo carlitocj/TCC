@@ -27,9 +27,6 @@ public class ExecutarSH {
 			e.printStackTrace();
 		}
 		
-		
-//		JOptionPane.showConfirmDialog(null, "Tem certeza ?", "Uma pergunta", JOptionPane.YES_NO_OPTION);
-
 	}
 
 	private static void mostrarResultado() {
