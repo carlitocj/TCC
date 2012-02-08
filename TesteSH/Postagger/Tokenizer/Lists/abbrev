@@ -1,0 +1,270 @@
+%% -------------
+%% Abbreviations
+
+%% Nouns
+
+_CN#ms
+
+min.
+séc.
+
+%% Units
+
+_UNIT#mn
+c.c.
+
+_UNIT#fn
+b.p.m.
+r.p.m.
+
+
+%% Possessives
+
+_POSS#gn
+v.
+
+
+%% Personals
+
+_PRS#gp
+v. exs.
+v. exas.
+v. ex.as
+vexas.
+vex.as
+vexas.
+
+_PRS#gs
+v. em.
+v. emª.
+v. em.ª
+v. em.a
+v. a.
+v. rev.
+v. revª.
+v. rev.ª
+v. rev.a
+v. revma.
+v. revmª.
+v. revm.ª
+v. ex.
+v. exa.
+v. exª.
+v. ex.ª
+v. ex.a
+v. mag.
+v. maga.
+v. ex. rev.
+v. exª. revª.
+v. ex.ª rev.ª
+v. ex.a rev.a
+v. s.
+v. sª.
+v. s.ª
+v. s.a
+v. pat.
+v. m.
+vex.
+vexª.
+vex.ª
+vex.a
+vexa.
+
+
+%% Week Days
+
+_WD#fs
+seg.
+qua.
+qui.
+sex.
+ter.
+
+_WD#ms
+sáb.
+dom.
+
+
+%% Months
+
+_MTH#ms
+jan.
+fev.
+abr.
+mai.
+jun.
+jul.
+ago.
+out.
+nov.
+mar.
+set.
+dez.
+
+
+%% Social Titles
+
+_STT#gs
+s. ex.
+s. exª.
+s. ex.ª
+s. ex.a
+s. exa.
+
+_STT#gp
+excias.
+exci.as
+excas.
+exc.as
+
+_STT#fp
+sr.as
+exmas.
+ex.mas
+exas.
+ex.as
+
+_STT#fs
+secª.
+sec.ª
+sub-secª.
+sub-sec.ª
+dirª.
+dir.ª
+sra.
+sr.a
+snra.
+snr.a
+srª.
+sr.ª
+snrª.
+snr.ª
+dra.
+drª.
+dr.ª
+dr.a
+enga.
+engª.
+eng.ª
+eng.a
+profa.
+prof.a
+profª.
+prof.ª
+arqa.
+arq.a
+arqª.
+arq.ª
+exª.
+ex.a
+ex.ª
+exa.
+exma.
+exm.a
+exmª.
+exm.ª
+
+_STT#mp
+exs.
+exos.
+ex.os
+exmos.
+ex.mos
+
+_STT#ms
+pres.
+sec.
+secº.
+sec.º
+sub-sec.
+sub-secº.
+sub-sec.º
+dir.
+s.
+pe.
+fr.
+ab.
+d.
+sr.
+snr.
+srs.
+dr.
+eng.
+engº.
+eng.º
+eng.o
+prof.
+arq.
+arqº.
+arq.º
+arqu.
+
+s. rev.
+s. revª.
+s. rev.ª
+s. rev.a
+s. revma.
+s. revmª.
+s. revm.ª
+s. a.
+s. em.
+s. emª.
+s. em.ª
+s. em.a
+
+s. mag.
+s. maga.
+s. m.
+s. ex. rev.
+s. exª. revª.
+s. ex.ª rev.ª
+s. ex.a rev.a
+s. pat.
+s. s.
+s. sª.
+s. s.ª
+s. s.a
+
+ex.
+exº.
+ex.o
+ex.º
+exo.
+excia.
+exciª.
+exci.ª
+exci.a
+exca.
+exc.a
+excª.
+exc.ª
+exmo.
+ex.mo
+exmº.
+exm.º
+
+
+%% Parts of Addresses
+
+_PADR#fs
+r.
+av.
+pr.
+trav.
+estr.
+rot.
+
+_PADR#ms
+lt.
+lrg.
+
+
+%% Noun Phrases
+
+_NP#mn
+p.s.
+loc. cit.
+
+_NP#fn
+op. cit.
+

@@ -1,0 +1,121 @@
+
+
+%% Tokens preceded by hyphen, in the right-hand
+%% side of compounds to be dishyphenated
+
+
+
+%% Compound "haver-de"
+
+_PREP
+
+de
+
+
+
+%% Clitics in mesoclisis and enclisis
+
+%% Normal, uncontracted clitics
+
+_CL
+
+me
+
+te
+
+o
+lo
+no
+os
+los
+nos
+
+a
+la
+na
+as
+las
+nas
+
+lhe
+lhes
+
+vos
+vo
+
+se
+
+
+
+
+%% Contracted Clitics
+
+mo,
+me_ o;
+me_CL o_CL
+
+mos,
+me_ os;
+me_CL os_CL
+
+ma,
+me_ a;
+me_CL a_CL
+
+mas,
+me_ as;
+me_CL as_CL
+
+to,
+te_ o;
+te_CL o_CL
+
+tos,
+te_ os;
+te_CL os_CL
+
+ta,
+te_ a;
+te_CL a_CL
+
+tas,
+te_ as;
+te_CL as_CL
+
+lho,
+lhe_ o;
+lhe_CL o_CL
+
+lhos,
+lhe_ os;
+lhe_CL os_CL
+
+lha,
+lhe_ a;
+lhe_CL a_CL
+
+lhas,
+lhe_ as;
+lhe_CL as_CL
+
+
+
+%% Dislocated verb endings, 
+%% future and conditional endings
+%% (handled with Crivo's code for clitics)
+
+/ei
+/ás
+/á
+/emos
+/eis
+/ão
+
+/ia
+/ias
+/iamos
+/íamos
+/ieis
+/íeis
+/iam
+/íam
