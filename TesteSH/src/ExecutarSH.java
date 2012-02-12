@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 
 public class ExecutarSH {
 
-	private static String CAMINHO = "/home/romulo/workspaceTCC/TesteSH/Postagger/";
+	private static String CAMINHO = "/home/romulo/git/TCC/TesteSH/Postagger/";
 
 	public static void main(String[] args) {
 		ProcessBuilder pb = new ProcessBuilder("bash", "-c", "cat " + CAMINHO

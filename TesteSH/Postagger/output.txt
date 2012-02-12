@@ -1,2 +1,2 @@
-usar/INF o/DA computador/CN é/V legal/ADJ 
+usar/INF o/DA computador/CN é/V legal/ADJ .*//PNT 
 
