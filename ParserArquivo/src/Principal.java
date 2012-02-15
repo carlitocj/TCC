@@ -26,9 +26,12 @@ public class Principal {
 		}
 		
 		for (String string : listaTokens) {
-			System.out.println(string);
 			if(string.contains("/CN")){
+				System.out.println(string);
 				
+			}else if(string.contains("/ADJ")){
+				System.out.println(string);
+				ConsultaBaseDeDados.getAvaliacao(string.replace("/ADJ", ""));
 			}
 		}
 
