@@ -13,7 +13,7 @@ import module.parser.ControlePrincipal;
 public class Main {
 
     public static void main(String[] args) {
-        new ControlePrincipal("O computador é muito rápido.");
+        new ControlePrincipal("O computador é muito bom");
     }
     
 }

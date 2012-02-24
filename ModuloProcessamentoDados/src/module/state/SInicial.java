@@ -6,7 +6,7 @@
 package module.state;
 
 import module.define.AppDefines;
-import module.model.Termo;
+import module.model.Token;
 
 /**
  *
@@ -18,10 +18,13 @@ public class SInicial implements State, AppDefines{
         processa("");
     }
 
+    @Override
     public void processa(String palavra) {
+        System.out.println("Estado inicial...");
     }
 
-    public State novoEstado(Termo termo) {
+    @Override
+    public State novoEstado(Token termo) {
         switch (termo.getTipo()) {
             case Substantivo:
                 return new SSubstantivo(termo.getPalavra());
@@ -30,7 +33,7 @@ public class SInicial implements State, AppDefines{
             case Verbo:
                 return new SVerbo(termo.getPalavra());
             default:
-                System.out.println("Estrutura incorreta.");
+                System.out.println("FRASE COM ESTRUTURA INCORRETA.");
                 return null;
         }
     }

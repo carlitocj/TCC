@@ -4,7 +4,7 @@
  */
 package module.state;
 
-import module.model.Termo;
+import module.model.Token;
 
 /**
  *
@@ -14,5 +14,5 @@ public interface State {
 
     public void processa(String palavra);
 
-    public State novoEstado(Termo termo);
+    public State novoEstado(Token termo);
 }

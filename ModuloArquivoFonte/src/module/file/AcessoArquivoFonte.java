@@ -38,10 +38,9 @@ public class AcessoArquivoFonte {
 
         try {
             FileWriter fwArquivo = null;
-            fwArquivo = new FileWriter(fArquivo);
+            fwArquivo = new FileWriter(fArquivo, false);
             BufferedWriter bw = new BufferedWriter(fwArquivo);
             bw.write(conteudo + "\n");
-            System.out.println("Texto adicionado com sucesso.");
             bw.close();
             fwArquivo.close();
 

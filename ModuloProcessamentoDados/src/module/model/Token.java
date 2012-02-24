@@ -8,12 +8,12 @@ package module.model;
  *
  * @author carlito
  */
-public class Termo {
+public class Token {
 
     private String palavra;
     private short tipo;
 
-    public Termo() {
+    public Token() {
         setPalavra("");
         setTipo((short) -1);
     }

@@ -7,26 +7,23 @@ package module.parser;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.StringTokenizer;
+import module.state.context.StateContext;
+import module.define.AppDefines;
 import module.exec.ExecutarSH;
 import module.file.AcessoArquivoFonte;
 import module.model.Termo;
+import module.model.Token;
 import module.persistence.Queries;
 
 /**
  *
  * @author carlito
  */
-public class ControlePrincipal {
+public class ControlePrincipal implements AppDefines {
 
-    private ExecutarSH moduloRodaSh;
-    private AcessoArquivoFonte moduloArquivoFonte;
-    private Queries moduloAcessoBanco;
-    private HashMap<String, Termo> mapPalavras;
+    private static HashMap<String, Termo> mapPalavras;
 
     public ControlePrincipal(String textoEntrada) {
-        moduloRodaSh = new ExecutarSH();
-        moduloArquivoFonte = new AcessoArquivoFonte();
-        moduloAcessoBanco = new Queries();
         controlaProcesso(textoEntrada);
     }
 
@@ -41,6 +38,7 @@ public class ControlePrincipal {
     }
 
     private void carregaPalavrasBanco() {
+        Queries moduloAcessoBanco = new Queries();
         if ((mapPalavras = moduloAcessoBanco.selectAll()) == null) {
             System.out.println("Erro ao buscar palavras do banco.");
             System.out.println("Encerrando sistema...");
@@ -49,15 +47,17 @@ public class ControlePrincipal {
     }
 
     private void escreveArquivo(String frase) {
+        AcessoArquivoFonte moduloArquivoFonte = new AcessoArquivoFonte();
         if (frase == null || frase.trim().isEmpty()) {
             System.out.println("Erro: texto nulo ou vazio a ser analisado.");
             System.out.println("Encerrando sistema...");
             System.exit(0);
         }
-        moduloArquivoFonte.escreverArquivoEntrada("O computador é muito rápido.");
+        moduloArquivoFonte.escreverArquivoEntrada(frase);
     }
 
     private void rodaSh() {
+        ExecutarSH moduloRodaSh = new ExecutarSH();
         if (!moduloRodaSh.rodarSH()) {
             System.out.println("Erro ao rodar script POSTagger.");
             System.out.println("Encerrando sistema...");
@@ -66,6 +66,7 @@ public class ControlePrincipal {
     }
 
     private String leArquivo() {
+        AcessoArquivoFonte moduloArquivoFonte = new AcessoArquivoFonte();
         String saida;
         saida = moduloArquivoFonte.lerArquivoSaida();
         if (saida == null || saida.trim().isEmpty()) {
@@ -78,15 +79,53 @@ public class ControlePrincipal {
 
     private void parser(String texto) {
         StringBuilder sbi = new StringBuilder(texto);
-        ArrayList<String> listaTokens = new ArrayList<String>();
+        ArrayList<Token> listaTokens = new ArrayList<Token>();
 
         StringTokenizer st = new StringTokenizer(sbi.toString(), " ");
+        Token token;
         while (st.hasMoreTokens()) {
-            listaTokens.add(st.nextToken());
+            if ((token = encapsulaToken(st.nextToken())) != null) {
+                listaTokens.add(token);
+            }
         }
 
-        for (String string : listaTokens) {
-            System.out.println(string);
+        //instancia a máquina de estados para polarização da frase
+        new StateContext(listaTokens);
+    }
+
+    private Token encapsulaToken(String token) {
+        Token objToken = new Token();
+
+        if (token.contains("/ADJ")) {
+            objToken.setTipo(Adjetivo);
+            objToken.setPalavra(token.replace("/ADJ", ""));
+            return objToken;
         }
+        if (token.contains("/ADV")) {
+            objToken.setTipo(Adverbio);
+            objToken.setPalavra(token.replace("/ADV", ""));
+            return objToken;
+        }
+        if (token.contains("/CJ")) {
+            objToken.setTipo(Conjuncao);
+            objToken.setPalavra(token.replace("/CJ", ""));
+            return objToken;
+        }
+        if (token.contains("/CN")) {
+            objToken.setTipo(Substantivo);
+            objToken.setPalavra(token.replace("/CN", ""));
+            return objToken;
+        }
+        if (token.contains("/V")) {
+            objToken.setTipo(Verbo);
+            objToken.setPalavra(token.replace("/V", ""));
+            return objToken;
+        }
+
+        return null;
+    }
+
+    public static HashMap<String, Termo> getMapPalavras(){
+        return mapPalavras;
     }
 }
