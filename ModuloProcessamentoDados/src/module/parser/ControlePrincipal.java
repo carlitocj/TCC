@@ -23,18 +23,25 @@ public class ControlePrincipal implements AppDefines {
 
     private static HashMap<String, Termo> mapPalavras;
 
-    public ControlePrincipal(String textoEntrada) {
-        controlaProcesso(textoEntrada);
+    public ControlePrincipal(String[] frases) {
+        controlaProcesso(frases);
     }
 
-    private void controlaProcesso(String textoEntrada) {
+    private void controlaProcesso(String[] frases) {
         String textoSaida;
 
         carregaPalavrasBanco();
-        escreveArquivo(textoEntrada);
-        rodaSh();
-        textoSaida = leArquivo();
-        parser(textoSaida);
+        for (String frase : frases) {
+            System.out.println();
+            System.out.println("###############################################");
+            System.out.println("Frase: "+frase);
+            escreveArquivo(frase);
+            rodaSh();
+            textoSaida = leArquivo();
+            parser(textoSaida);
+            System.out.println("###############################################");
+            System.out.println();
+        }
     }
 
     private void carregaPalavrasBanco() {
@@ -125,7 +132,7 @@ public class ControlePrincipal implements AppDefines {
         return null;
     }
 
-    public static HashMap<String, Termo> getMapPalavras(){
+    public static HashMap<String, Termo> getMapPalavras() {
         return mapPalavras;
     }
 }
