@@ -25,7 +25,7 @@ class SVerbo implements State, AppDefines {
         Termo termo = null;
         termo=parent.getScoreWord(palavra+"-verbo");
         if(termo!=null){
-            parent.setScore(termo.getPositivo()-termo.getNegativo());
+            parent.setScore(termo);
         }
     }
 

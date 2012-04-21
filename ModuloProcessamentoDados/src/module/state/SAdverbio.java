@@ -25,7 +25,7 @@ class SAdverbio implements State, AppDefines {
         Termo termo = null;
         termo=parent.getScoreWord(palavra+"-advérbio");
         if(termo!=null){
-            parent.setScore(termo.getPositivo()-termo.getNegativo());
+            parent.setScore(termo);
         }
     }
 

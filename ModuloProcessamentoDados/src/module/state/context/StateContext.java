@@ -4,7 +4,10 @@
  */
 package module.state.context;
 
+import java.util.ArrayList;
 import java.util.List;
+import module.formula.Formula1;
+import module.formula.Formula2;
 import module.model.Termo;
 import module.model.Token;
 import module.parser.ControlePrincipal;
@@ -19,14 +22,12 @@ public class StateContext {
 
     private State estadoAtual;
     private State estadoAnterior;
-    private double score;
-    private int qtdScore;
     private List<Token> tokens;
+    private List<Termo> termos;
 
     public StateContext(List<Token> tokens) {
+        termos = new ArrayList<Termo>();
         System.out.println("Iniciando máquina de estados...");
-        score = 0;
-        qtdScore = 0;
         this.tokens = tokens;
         estadoAtual = new SInicial();
         iterator();
@@ -38,8 +39,8 @@ public class StateContext {
                 return;
             }
         }
-        System.out.println("Processo concluído.");
-        System.out.println("Pontuação da frase: " + calculaScoreFrase());
+        System.out.println("Calculando pontuação...");
+        calculaScoreFrase();
     }
 
     public boolean setState(Token token) {
@@ -55,13 +56,12 @@ public class StateContext {
         return ControlePrincipal.getMapPalavras().get(key);
     }
 
-    public void setScore(double score) {
-        System.out.println("Score: " + score);
-        this.score = +score;
-        qtdScore++;
+    public void setScore(Termo termo) {
+        termos.add(termo);
     }
 
-    private double calculaScoreFrase() {
-        return score / qtdScore;
+    private void calculaScoreFrase() {
+        new Formula1(termos);
+        new Formula2(termos);
     }
 }

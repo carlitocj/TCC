@@ -25,7 +25,7 @@ class SAdjetivo implements State, AppDefines {
         Termo termo = null;
         termo=parent.getScoreWord(palavra+"-adjetivo");
         if(termo!=null){
-            parent.setScore(termo.getPositivo()-termo.getNegativo());
+            parent.setScore(termo);
         }
     }
 
